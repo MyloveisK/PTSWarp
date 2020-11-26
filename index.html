@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Hello World!</title>
+    <meta http-equiv="Content-Security-Policy" content="script-src 'self' 'unsafe-inline';" />
+    
+</head>
+<body>
+    <button id="move1">Go</button>
+    <button id="move2">Go</button>
+    <button id="readFile">Open</button>
+    
+    <ul></ul>
+   <script>
+    // include the ipc module to communicate with main process.
+    const ipcRenderer = require('electron').ipcRenderer; 
+    const fs = require('fs');
+    var myData = JSON.parse(fs.readFileSync('dataWarp.json'));
+    const ul=document.querySelector("ul")
+    
+    const btnClick1 = document.getElementById('move1');
+    const btnClick2 = document.getElementById('move2');
+    const btnClick3 = document.getElementById("readFile");
+   
+    btnClick1.addEventListener('click', function () {
+        var arg ="Dự Châu";
+        ipcRenderer.send("start-warp",arg); 
+    });
+    btnClick2.addEventListener('click', function () {
+        var arg ="A Châu";
+        ipcRenderer.send("start-warp",arg); 
+    });
+    
+    ipcRenderer.on("finish-warp",(event,arg)=>{
+        ul.innerHTML=""
+        
+        let h=Object.keys(myData[arg]);
+        for(let i=0;i<h.length;i++){
+            const li=document.createElement("li")
+            const itemText=document.createTextNode(h[i])
+            li.appendChild(itemText)
+            ul.appendChild(li)
+        }
+    }); 
+    
+    </script>
+    
+</body>
+</html>
