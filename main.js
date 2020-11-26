@@ -3,7 +3,8 @@ const { SSL_OP_SSLEAY_080_CLIENT_DH_BUG } = require("constants");
 const proxy = require("node-tcp-proxy");
 const util = require("util");
 
-var data=["59e9a4adabacac1bad0aa5b162","59e9a9adb9a5b9ad"]
+const fs = require('fs');
+var myData = JSON.parse(fs.readFileSync('dataWarp.json'));
 var newProxy = proxy.createProxy(6414, "103.48.192.145", 6414,{
   upstream: function(context, data) {
     //console.log(data)
@@ -22,8 +23,8 @@ downstream: function(context, data) {
 //
 function createWindow () {
   const win = new BrowserWindow({
-    width: 200,
-    height: 300,
+    width: 400,
+    height: 400,
     webPreferences: {
       nodeIntegration: true
     }
@@ -46,11 +47,17 @@ app.on('activate', () => {
   
 })
 ipcMain.on("start-warp",function (event, arg) {
-  
   newProxy.warp="start";
   newProxy.textMove=data[0];
   newProxy.textWarp=data[1];
   event.reply('finish-warp', arg)
+});
+ipcMain.on("addListWarp",function (event, arg) {
+  newProxy.warp="start";
+  newProxy.textMove=arg[0];
+  newProxy.textWarp=arg[1];
+  
+  event.reply('sendListWarp', arg)
 });
 
 
