@@ -2,18 +2,23 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>Hello World!</title>
+    <title>PTS Warp</title>
     <meta http-equiv="Content-Security-Policy" content="script-src 'self' 'unsafe-inline';" />
     
     <style>
-       li{
-        padding-bottom: 10px;
+       button{
+        margin-bottom: 5px;
+       }
+       input{
+        margin-bottom: 5px;
        }
     </style>
 </head>
 <body>
+    <p id="showMapName">Warp cơ bản đi qua từng map (beta version)</p>
     Map: <input type="text" id="myText" value="">
     <button id="mapName">Get List Map</button>
+    <button id="talk">Talk</button>
     <section id="container"></section>
     
    
@@ -21,43 +26,40 @@
     // include the ipc module to communicate with main process.
     const ipcRenderer = require('electron').ipcRenderer; 
     const fs = require('fs');
+
+    
     var myData = JSON.parse(fs.readFileSync('dataWarp.json'));
-    const ul=document.querySelector("ul")
     
     const btnClick2 = document.getElementById('mapName');
     const container = document.getElementById('container');
+    const show = document.getElementById('showMapName');
+    function addButton(mapName){
+        let h=Object.keys(myData[mapName]);
+        show.innerHTML=mapName;
+        for(let i=0;i<h.length;i++){
+            var btn = document.createElement("BUTTON");   // Create a <button> element
+            btn.innerHTML = h[i];                   // Insert text
+            btn.onclick=function(){
+                let argReturn=[h[i],myData[mapName][h[i]]];
+                ipcRenderer.send("addListWarp",argReturn); 
+
+            }
+            container.appendChild(btn);
+            container.appendChild(document.createElement("br")); 
+        }
+    }
+
+
     
     btnClick2.addEventListener('click', function () {
         var myText=document.getElementById("myText").value
         container.innerHTML="";
-        let h=Object.keys(myData[myText]);
-        for(let i=0;i<h.length;i++){
-            var btn = document.createElement("BUTTON");   // Create a <button> element
-            btn.innerHTML = h[i];                   // Insert text
-            btn.onclick=function(){
-                var arg=myData[myText][h[i]];
-                ipcRenderer.send("addListWarp",arg); 
-
-            }
-            container.appendChild(btn);               // Append <button> to <body>
-        }
-
+        addButton(myText)
     });
-    
     ipcRenderer.on("sendListWarp",(event,arg)=>{
+        document.getElementById("myText").value="";
         container.innerHTML="";
-        let h=Object.keys(myData[myText]);
-        for(let i=0;i<h.length;i++){
-            var btn = document.createElement("BUTTON");   // Create a <button> element
-            btn.innerHTML = h[i];                   // Insert text
-            btn.onclick=function(){
-                var arg=myData[myText][h[i]];
-                ipcRenderer.send("addListWarp",arg); 
-
-            }
-            container.appendChild(btn);               // Append <button> to <body>
-        }
-
+        addButton(arg)
     }); 
 
     
