@@ -4,22 +4,35 @@
     <meta charset="UTF-8">
     <title>PTS Warp</title>
     <meta http-equiv="Content-Security-Policy" content="script-src 'self' 'unsafe-inline';" />
-    
     <style>
-       button{
-        margin-bottom: 5px;
-       }
-       input{
-        margin-bottom: 5px;
-       }
+       button{margin-bottom: 5px;}
+       input{ margin-bottom: 5px;}
+       span{font-weight: bold;}
     </style>
 </head>
 <body>
-    <p id="showMapName">Warp cơ bản đi qua từng map (beta version)</p>
-    Map: <input type="text" id="myText" value="">
-    <button id="mapName">Get List Map</button>
-    <button id="talk">Talk</button>
-    <section id="container"></section>
+    
+    
+    IP260601</br>
+    BAT26NHB</br>
+    Vị Trí : <span id="inHere"></span></br>
+
+    <input type="text" id="inputMap" value="" list="inputMap1">
+    <datalist id="inputMap1">
+        <option value="Thanh Châu">
+        <option value="Việt Châu">
+        <option value="Quảng Trường Trác Quận"></option>
+        <option value="Thành Từ Châu">
+        <option value="Thành Hứa Xương"></option>
+        <option value="Thành Đông Quận">
+        <option value="Rừng Đông Quận"></option>
+        <option value="Điểm Binh Đài">
+\        <option value="Hoàng Lăng">  
+            
+    </datalist>
+
+    <button id="btnListWarp">Get List Warp</button>
+    <section id="listWarp"></section>
     
    
    <script>
@@ -28,38 +41,48 @@
     const fs = require('fs');
 
     
-    var myData = JSON.parse(fs.readFileSync('dataWarp.json'));
+   
+    const btnListWarp= document.getElementById('btnListWarp');
+    const listWarp = document.getElementById('listWarp');
+    const inHere = document.getElementById('inHere');
+    const talkBGH = document.getElementById('talkBGH');
     
-    const btnClick2 = document.getElementById('mapName');
-    const container = document.getElementById('container');
-    const show = document.getElementById('showMapName');
-    function addButton(mapName){
-        let h=Object.keys(myData[mapName]);
-        show.innerHTML=mapName;
-        for(let i=0;i<h.length;i++){
-            var btn = document.createElement("BUTTON");   // Create a <button> element
-            btn.innerHTML = h[i];                   // Insert text
-            btn.onclick=function(){
-                let argReturn=[h[i],myData[mapName][h[i]]];
-                ipcRenderer.send("addListWarp",argReturn); 
 
+    var myData = JSON.parse(fs.readFileSync('dataWarp.json'));
+
+
+    function addButton(mapName){
+        inHere.innerHTML=mapName; // show map name in here
+
+        let listMap=Object.keys(myData[mapName]); //get list map
+        
+        for(let i=0;i<listMap.length;i++){
+            var btn = document.createElement("BUTTON");   // Create a <button> element
+            btn.innerHTML = listMap[i];                   // Insert text
+            btn.onclick=function(){
+                let argReturn=[listMap[i],myData[mapName][listMap[i]]];
+                ipcRenderer.send("addListWarp",argReturn); 
             }
-            container.appendChild(btn);
-            container.appendChild(document.createElement("br")); 
+            listWarp.appendChild(btn);
+            listWarp.appendChild(document.createElement("br")); 
         }
     }
 
 
     
-    btnClick2.addEventListener('click', function () {
-        var myText=document.getElementById("myText").value
-        container.innerHTML="";
-        addButton(myText)
+    btnListWarp.addEventListener('click', function () {
+        let x=document.getElementById("inputMap").value
+        listWarp.innerHTML="";
+        addButton(x)
     });
     ipcRenderer.on("sendListWarp",(event,arg)=>{
-        document.getElementById("myText").value="";
-        container.innerHTML="";
-        addButton(arg)
+        let selectionPacket=arg.slice(0,4)
+        inHere.innerHTML=arg;
+        if(selectionPacket!="Talk"||selectionPacket!="BGH-"){
+            document.getElementById("inputMap").value="";
+            listWarp.innerHTML="";
+            addButton(arg)
+        }
     }); 
 
     

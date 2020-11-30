@@ -1,0 +1,53 @@
+if(newProxy.warp=="goCastle"){
+    
+    if(stepGoCastle<=0){
+      sendPacket(context,packetEnd);
+      sendPacket(context,packetEnd);
+      sendPacket(context,Buffer.from("59e9afada1ac","hex"));
+      newProxy.warp="end";
+      doStep=0;
+      stepGoCastle=50;
+    }else{
+      
+      if(doStep==1){
+        console.log("bat dau goi lenh 1")
+        selectAndSendPacket(context,newProxy.textMove,newProxy.textWarp);
+        stepGoCastle--;
+        doStep++;
+      }
+      if((doStep==2)&&(Buffer.compare(data,packetCompare)==0)){
+          let sang=doStep-2;
+          mySelection(context,myChoose[sang])
+          stepGoCastle--;
+          doStep++;
+          console.log("stepGoCastle:" +stepGoCastle)
+          console.log("doStep:" +doStep)
+      }
+      if((doStep==3)&&(Buffer.compare(data,packetCompare)==0)){
+        let sang=doStep-2;
+        mySelection(context,myChoose[sang])
+        stepGoCastle--;
+        doStep++;
+        console.log("stepGoCastle:" +stepGoCastle)
+        console.log("doStep:" +doStep)
+      }
+      if((doStep==4)&&(Buffer.compare(data,packetCompare)==0)){
+        let sang=doStep-2;
+        mySelection(context,myChoose[sang])
+        stepGoCastle--;
+        doStep++;
+        console.log("stepGoCastle:" +stepGoCastle)
+        console.log("doStep:" +doStep)
+      }
+      if((doStep==5)&&(Buffer.compare(data,packetCompare)==0)){
+        let sang=doStep-2;
+        mySelection(context,myChoose[sang])
+        stepGoCastle--;
+        doStep++;
+        console.log("stepGoCastle:" +stepGoCastle)
+        console.log("doStep:" +doStep)
+      }
+      
+    }
+    
+  }
