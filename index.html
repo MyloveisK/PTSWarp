@@ -25,13 +25,18 @@
         <option value="Thành Từ Châu">
         <option value="Thành Hứa Xương"></option>
         <option value="Thành Đông Quận">
+        <option value="Quan Phủ Đông Quận"></option>
         <option value="Rừng Đông Quận"></option>
         <option value="Điểm Binh Đài">
-\        <option value="Hoàng Lăng">  
-            
+        <option value="Hoàng Lăng">  
+        
+        
+        <option value="Q61">
+        <option value="Q62">  
     </datalist>
 
     <button id="btnListWarp">Get List Warp</button>
+    <button id="comboWarp">Combo</button>
     <section id="listWarp"></section>
     
    
@@ -39,13 +44,27 @@
     // include the ipc module to communicate with main process.
     const ipcRenderer = require('electron').ipcRenderer; 
     const fs = require('fs');
-
-    
-   
+    var Q21=["Rừng Đông Quận","Thành Đông Quận","Đại Độ Đông Quận","Quan Phủ Đông Quận","Talk:Vương Hoành"]
+    var Q22=["Quan Phủ Đông Quận","Đại Độ Đông Quận","Thành Đông Quận","Rừng Đông Quận","Thanh Châu","Rừng Vi Sơn","Talk:Tào Tháo-VS"]
+    var Q23=["Rừng Vi Sơn","Thanh Châu","Rừng Đông Quận","Thành Đông Quận"]
+    var Q24=["Thành Đông Quận","Đại Độ Đông Quận","Quan Phủ Đông Quận","Talk:Vương Hoành"]
+    var Q31=["Talk:Vương Hoành","Đại Độ Đông Quận","Thành Đông Quận","Rừng Đông Quận","Thanh Châu","Rừng Đôn Khưu"]
+    var Q32=["Rừng Đôn Khưu","Thanh Châu","Rừng Đông Quận","Thành Đông Quận","Đại Độ Đông Quận","Quan Phủ Đông Quận","Talk:Vương Hoành"]
+    var Q41=["Talk:Vương Hoành","Đại Độ Đông Quận","Thành Đông Quận","Rừng Đông Quận","Thanh Châu","Rừng Vi Sơn","Talk:Tào Tháo-VS"]
+    var Q42=["Rừng Vi Sơn","Thanh Châu","U Châu","Rừng Triều Ca","Động Triều Ca 1","Động Triều Ca 2", "Động Triều Ca 3","Động Triều Ca 7","Talk:Hà Hỷ"]
+    var Q43=["Động Triều Ca 7","Động Triều Ca 3","Động Triều Ca 2","Động Triều Ca 4","Động Triều Ca 8","Động Triều Ca 9","Talk:Thái Dương"]
+    var Q51=["Động Triều Ca 9","Động Triều Ca 8","Động Triều Ca 4","Động Triều Ca 2","Động Triều Ca 1","Rừng Triều Ca","U Châu","Thanh Châu"]
+    var Q52=["Thanh Châu","Rừng Đông Quận","Thành Đông Quận"]
+    var Q53=["Thành Từ Châu","Từ Châu","Rừng Tương Huyện 1","Rừng Tương Huyện 3","Talk:Lưu Tường"]
+    var Q54=["Rừng Tương Huyện 3","Rừng Tương Huyện 1","Từ Châu","Y Nhị Động 1","Talk:Huệ Cừ"]
+    var Q55=["Y Nhị Động 1","Từ Châu","Y Nhị Trại 1","Y Nhị Trại 2","Lều Viên Thuật","Talk:Viên Thuật"]
+    var Q56=["Lều Viên Thuật","Y Nhị Trại 2","Y Nhị Trại 1","Từ Châu","Thành Từ Châu"]
+    var Q61=["Thành Đông Quận","Đại Độ Đông Quận","Quan Phủ Đông Quận"]
+    var Q62=["Thành Đông Quận","BGH-2431-Thành Từ Châu"]
     const btnListWarp= document.getElementById('btnListWarp');
     const listWarp = document.getElementById('listWarp');
     const inHere = document.getElementById('inHere');
-    const talkBGH = document.getElementById('talkBGH');
+    const comboWarp = document.getElementById('comboWarp');
     
 
     var myData = JSON.parse(fs.readFileSync('dataWarp.json'));
@@ -74,6 +93,39 @@
         let x=document.getElementById("inputMap").value
         listWarp.innerHTML="";
         addButton(x)
+    });
+    comboWarp.addEventListener('click', function () {
+        let arrWarpSend=[]
+        let arrWarp=[]
+        let x=document.getElementById("inputMap").value;
+        switch(x){
+            case "Q21": arrWarp=Q21; break;
+            case "Q22": arrWarp=Q22; break;
+            case "Q23": arrWarp=Q23; break;
+            case "Q24": arrWarp=Q24; break;
+            case "Q31": arrWarp=Q31; break;
+            case "Q32": arrWarp=Q32; break;
+            case "Q41": arrWarp=Q41; break;
+            case "Q42": arrWarp=Q42; break;
+            case "Q43": arrWarp=Q43; break;
+            case "Q51": arrWarp=Q51; break;
+            case "Q52": arrWarp=Q52; break;
+            case "Q53": arrWarp=Q53; break;
+            case "Q54": arrWarp=Q54; break;
+            case "Q55": arrWarp=Q55; break;
+            case "Q56": arrWarp=Q56; break;
+            case "Q61": arrWarp=Q61; break;
+            case "Q62": arrWarp=Q62; break;
+        }
+        for(let i=0;i<arrWarp.length-1;i++){
+            arrWarpSend.push(
+                [   arrWarp[i+1],
+                    myData[arrWarp[i]][arrWarp[i+1]][0],
+                    myData[arrWarp[i]][arrWarp[i+1]][1],
+                ]
+                )
+        }
+        ipcRenderer.send("comboWarp",arrWarpSend); 
     });
     ipcRenderer.on("sendListWarp",(event,arg)=>{
         let selectionPacket=arg.slice(0,4)

@@ -1,53 +1,9 @@
-if(newProxy.warp=="goCastle"){
-    
-    if(stepGoCastle<=0){
-      sendPacket(context,packetEnd);
-      sendPacket(context,packetEnd);
-      sendPacket(context,Buffer.from("59e9afada1ac","hex"));
-      newProxy.warp="end";
-      doStep=0;
-      stepGoCastle=50;
-    }else{
-      
-      if(doStep==1){
-        console.log("bat dau goi lenh 1")
-        selectAndSendPacket(context,newProxy.textMove,newProxy.textWarp);
-        stepGoCastle--;
-        doStep++;
-      }
-      if((doStep==2)&&(Buffer.compare(data,packetCompare)==0)){
-          let sang=doStep-2;
-          mySelection(context,myChoose[sang])
-          stepGoCastle--;
-          doStep++;
-          console.log("stepGoCastle:" +stepGoCastle)
-          console.log("doStep:" +doStep)
-      }
-      if((doStep==3)&&(Buffer.compare(data,packetCompare)==0)){
-        let sang=doStep-2;
-        mySelection(context,myChoose[sang])
-        stepGoCastle--;
-        doStep++;
-        console.log("stepGoCastle:" +stepGoCastle)
-        console.log("doStep:" +doStep)
-      }
-      if((doStep==4)&&(Buffer.compare(data,packetCompare)==0)){
-        let sang=doStep-2;
-        mySelection(context,myChoose[sang])
-        stepGoCastle--;
-        doStep++;
-        console.log("stepGoCastle:" +stepGoCastle)
-        console.log("doStep:" +doStep)
-      }
-      if((doStep==5)&&(Buffer.compare(data,packetCompare)==0)){
-        let sang=doStep-2;
-        mySelection(context,myChoose[sang])
-        stepGoCastle--;
-        doStep++;
-        console.log("stepGoCastle:" +stepGoCastle)
-        console.log("doStep:" +doStep)
-      }
-      
-    }
-    
-  }
+let arrWarp=["Điểm Binh Đài","Đường lớn Hứa Xương","Thành Hứa Xương"]
+let arrWarp=["Thành Từ Châu","Từ Châu","Núi Mang Thương 1","Núi Mang Thương 2"]
+let arrWarp=["Núi Mang Thương 2","Núi Mang Thương 1",,"Từ Châu","Thành Từ Châu"]
+let arrWarp=["Thành Hứa Xương","Đường lớn Hứa Xương","Điểm Binh Đài
+,"Talk:Trình Lập"]
+let Q21=["Rừng Đông Quận","Thành Đông Quận","Đại Độ Đông Quận","Quan Phủ Đông Quận","Talk:Vương Hoành"]
+let Q22=["Quan Phủ Đông Quận","Đại Độ Đông Quận","Thành Đông Quận","Rừng Đông Quận","Thanh Châu","Rừng Vi Sơn","Talk:Tào Tháo-VS"]
+let Q23=["Rừng Vi Sơn","Thanh Châu","Rừng Đông Quận","Thành Đông Quận"]
+let Q24=["Thành Đông Quận","Đại Độ Đông Quận","Quan Phủ Đông Quận","Talk:Vương Hoành"]
