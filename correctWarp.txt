@@ -1,12 +1,122 @@
-nha tào thao -hua xuong-tao thao
-59e9a4adabacaf0bac32ac8c5e
-59e9a9adb9aca9ad
-
-nha tao thao-hua xuong -tao cua
-59e9a4adabacaf0bac32ac8c5e
-59e9a9adb9acafad
+ move
+up
+<Buffer 59 e9 a4 ad ab ac ae 87 a8 ea a9 8c 47>
+dow
+<Buffer 59 e9 a6 ad ab ac e6 d5 ad ad ae 87 a8 ea a9>
 
 
-//lac duong -hua xuong 221
-59e9a4adabacafcbad66af8c53
-59e9a9adb9acaead
+
+
+talk
+
+up
+<Buffer 59 e9 a9 ad b9 ac ac ad>
+dow
+<Buffer 59 e9 af ad ab af>
+dow
+<Buffer 59 e9 bc ad b9 ac ad ad ad ac ac ae ac ad ad ad ad ad ad 62 82>
+up
+<Buffer 59 e9 af ad b9 ab>
+dow
+<Buffer 59 e9 af ad b9 a5>
+dow
+<Buffer 59 e9 af ad a8 a9 59 e9 af ad a2 a7>
+
+
+
+up
+<Buffer 59 e9 a9 ad b9 a9 af ad>
+dow
+<Buffer 59 e9 af ad b9 a5>
+up
+<Buffer 59 e9 a9 ad b9 a5 af ad>
+dow
+<Buffer 59 e9 af ad a8 a9 59 e9 af ad a2 a7>
+dow
+<Buffer 59 e9 af ad b9 aa>
+up
+<Buffer 59 e9 af ad b9 ab>
+dow
+<Buffer 59 e9 af ad b9 aa>
+up
+<Buffer 59 e9 af ad b9 ab>
+dow
+<Buffer 59 e9 af ad 84 a3 59 e9 a0 ad a1 e6 d5 ad ad 0e 86 e7 ac 37 ac ae ad>
+dow
+<Buffer 59 e9 af ad b9 a5 59 e9 af ad a8 a9 59 e9 af ad a2 a7>
+up
+<Buffer 59 e9 af ad ba 9d>
+up
+<Buffer 59 e9 af ad a1 ac>
+dow
+<Buffer 59 e9 84 ad bb a9 ac ad ac ad 47 ac 3d ac ad ad ad ad ad af ad ad ad 8b af 3d ac ad ad ad ad ad ae ad ad ad 6f ac ed ac ad ad ad ad ad>
+
+
+ket thuc hoi thoai
+dow
+<Buffer 59 e9 af ad b9 a5>
+dow
+<Buffer 59 e9 af ad a8 a9 59 e9 af ad a2 a7>
+
+
+battle
+up
+<Buffer 59 e9 a4 ad a6 af ae 20 93 ad ad ae ad>
+dow
+<Buffer 59 e9 b1 ad a6 57 cb ac a8 af d2 d9 ad ad ad ad ad ad ad ad ae af 2c ac dd ad 2c ac dd ad b6 af>
+dow
+<Buffer 59 e9 ae ad a6 a7 ac 59 e9 b7 ad a6 a8 a8 a9 32 0d ad ad ad ad d2 d9 ad ad af af 37 a9 d0 ac 37 a9 d0 ac c9 ae 59 e9 b7 ad a6 a8 a8 aa 20 93 ad ad ad ... 17 more bytes>
+dow
+<Buffer 59 e9 af ad 99 ac>
+
+up
+<Buffer 59 e9 a4 ad a6 af ae 11 97 ad ad a6 ad>
+dow
+<Buffer 59 e9 b1 ad a6 57 cb ac a8 af d2 d9 ad ad ad ad ad ad ad ad ae af 2c ac dd ad 2c ac dd ad b6 af>
+dow
+<Buffer 59 e9 ae ad a6 a7 ac 59 e9 b7 ad a6 a8 a8 aa 11 97 ad ad ad ad ad ad ad ad ad af 84 ad e7 ad 84 ad e7 ad ab ae>
+dow
+<Buffer 59 e9 af ad 99 ac>
+
+battle
+ 59 e9 ab ad ac ac
+
+
+ ngu loc
+59 e9 a4 ad ab ac ae 8f a5 da ac a1 57
+ 59 e9 a9 ad b9 ac ae ad
+
+  59 e9 a4 ad ab af ab b9 ab 97 ab a1 72
+
+
+
+  59 e9 a4 ad ab ac ab 07 aa 96 ab a1 41
+
+
+  nhat item 
+  59 e9 a4 ad ab ac ae b7 ac 6a ac 8c 44
+59 e9 a9 ad ba af af ad
+
+nha do bing-duong lon tu chau
+ 59 e9 a4 ad ab ac ab a7 af 6a ac 8c 67
+  59 e9 a9 ad b9 a5 ac ad>
+
+ duong lon-thanh
+<Buffer 59 e9 a4 ad ab ac ab 57 af ca af 8c 4c>
+up
+<Buffer 59 e9 a9 ad b9 a9 ac ad>
+
+
+thanh-duong lon
+<Buffer 59 e9 a4 ad ab ac ac 93 ad de ad 8c 78>
+up
+<Buffer 59 e9 a9 ad b9 a9 ac ad>
+up
+<Buffer 59 e9 a9 ad b9 a5 ac ad>
+
+
+khoi dau game
+<Buffer 59 e9 a4 ad ab ac ab ff a8 1a af a1 43>
+up
+<Buffer 59 e9 a9 ad b9 a5 ac ad>
+

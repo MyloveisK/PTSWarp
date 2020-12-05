@@ -10,24 +10,35 @@ var myClear=0;
 
 // some packet sever send
 var ClientSendEnd=Buffer.from("59e9afadb9ab","hex");
-var ClientSendEndWarp=Buffer.from("59e9afada1ac","hex");
+var ClientSendEndAction=Buffer.from("59e9afada1ac","hex");
 var SeverSendEndDialog=Buffer.from("59e9afadabaf","hex");
+
 var SeverSendEndTalk=Buffer.from("59e9afadb9a5","hex");
+var SeverSendEndTalk1=Buffer.from("59e9afada8a959e9afada2a7","hex");
+
+
+
+var reSendWarp=Buffer.from("59e9aeadafafcc>","hex");
+var StopAutoQuest=Buffer.from("59e9aeadafafcf>","hex");
 var packetSelectOk=Buffer.from("59e9aeadb9a4b3","hex");
-var packetCompare=Buffer.from("59e9afadb9a5","hex");
 
 // variable for goCastle
 var myChoose="";
 var stepGoCastle=50;
-var doStep=0;
+var doingStep=0;
+var doingStepOld=0;
 
-//comboWarp
-var listCombo=[];
-var stepComboWarp=0;
+// variable for goTalk
+var stepTalk=0;
+
+//variable autoQuest
+var listAuto=[];
+var stepAutoQuest=0;
 var goNextWarp=0;
 var canSendWarp=0;
+
 //some function
-function logData(myData){
+function data2txt(myData){
   
   if(myData.length==13||myData.length<=9){
     myClear++
@@ -41,197 +52,171 @@ if(myClear>100){
     myClear=0;
 }
 }
-function mySelection(context,select){
-  switch(select){
-    case "1": context.serviceSocket.write(Buffer.from("59e9abadbdacacadadad","hex")); break;
-    case "2": context.serviceSocket.write(Buffer.from("59e9abadbdacafadadad","hex")); break;
-    case "3": context.serviceSocket.write(Buffer.from("59e9abadbdacaeadadad","hex")); break;
-    case "4": context.serviceSocket.write(Buffer.from("59e9abadbdaca9adadad","hex")); break;
+function goCastle(context,data){
+  if(stepGoCastle>0){
+    if((doingStep==1)&&(doingStep>doingStepOld)){
+      context.serviceSocket.write(Buffer.from(newProxy.doWhere,"hex"));
+      context.serviceSocket.write(Buffer.from(newProxy.doHow,"hex"));
+      doingStepOld=doingStep;
+      console.log("khoi dau go castle")
+    }
+    if((doingStep>1)&&(doingStep>doingStepOld)){
+      let index=doingStep-2;
+      switch(myChoose[index]){
+        case "1": context.serviceSocket.write(Buffer.from("59e9abadbdacacadadad","hex")); break;
+        case "2": context.serviceSocket.write(Buffer.from("59e9abadbdacafadadad","hex")); break;
+        case "3": context.serviceSocket.write(Buffer.from("59e9abadbdacaeadadad","hex")); break;
+        case "4": context.serviceSocket.write(Buffer.from("59e9abadbdaca9adadad","hex")); break;
+      }
+      doingStepOld=doingStep;
+      console.log("thuc hien lua chon   " + myChoose[index])
+      if(doingStep==myChoose.length+1){
+        if(canSendWarp==4){
+          stepAutoQuest--;
+          goNextWarp++;
+          canSendWarp=1;
+          newProxy.doWhat="autoQuest";
+        }else{
+          newProxy.doWhat="end";
+        }
+        
+        //console.log(doingStep);console.log(stepGoCastle)
+        //console.log("ket thuc go castle")
+      }
+    }
+    if(data.length>25){
+      doingStep++;
+      stepGoCastle--;
+      console.log("tang step len 1")
+    }
   }
 }
-
-function sendPacket(context,packet){
-  context.serviceSocket.write(Buffer.from(packet,"hex"));
+function goTalk(context,data){
+  if(stepTalk==1){
+    sendPacket(context,newProxy.doWhere,newProxy.doHow);
+    stepTalk=2;
+    console.log("bat dau noi chuyen voi npc")
+  }
+  if(stepTalk==2){
+    //sendend dialog
+    if(Buffer.compare(data,SeverSendEndDialog)==0){
+      context.serviceSocket.write(ClientSendEnd);
+      console.log("ket thuc hoi thoai")
+    }
+    //sendend choose
+    if(data.length>30){
+      context.serviceSocket.write(packetSelectOk);
+      //context.serviceSocket.write(ClientSendEnd);
+     console.log("goi lua chon 1 len sever")
+    // select 2:59 e9 ae ad b9 a4 b2  
+    // select tat/bat:59 e9 ae ad b9 a4 85
+    }
+    if(data.length>22){
+      context.serviceSocket.write(ClientSendEnd);
+      console.log("start battle")
+    }
+    if((Buffer.compare(data,SeverSendEndTalk)==0)||(Buffer.compare(data,SeverSendEndTalk1)==0)){
+      //context.serviceSocket.write(ClientSendEnd);
+      if(canSendWarp==3){
+        console.log("ket thuc noi chuyen voi npc");
+        stepTalk=0;
+        stepAutoQuest--;
+        goNextWarp++;
+        canSendWarp=0;
+        newProxy.doWhat="autoQuest";
+      }else{
+        console.log("ket thuc noi chuyen voi npc")
+        stepTalk=0;
+        newProxy.doWhat="end";
+      }
+      
+    }
+  }
+}
+function sendPacket(context,packet1,packet2){
+  context.serviceSocket.write(Buffer.from(packet1,"hex"));
+  context.serviceSocket.write(Buffer.from(packet2,"hex"));
+}
+function autoQuest(context){
+  if(stepAutoQuest==0){
+    console.log("ket thuc auto Quest")
+    newProxy.doWhat="end";
+  }
+  if((canSendWarp==1)&&(stepAutoQuest>0)){
+    switch(listAuto[goNextWarp][0].slice(0,4)){
+      case "Talk":{
+        newProxy.doWhat="talk";
+        newProxy.doWhere=listAuto[goNextWarp][1];
+        newProxy.doHow=listAuto[goNextWarp][2];
+        canSendWarp=3;
+        stepTalk=1;
+        console.log("noi chuyen voi npc trong chuoi Q")
+      }break;
+      case "BGH-":{
+        newProxy.doWhat="goCastle";
+        newProxy.doWhere=listAuto[goNextWarp][1];
+        newProxy.doHow=listAuto[goNextWarp][2];
+        canSendWarp=4;
+        myChoose=listAuto[goNextWarp][0].slice(listAuto[goNextWarp][0].indexOf("-")+1,listAuto[goNextWarp][0].lastIndexOf("-"))
+        stepGoCastle=myChoose.length+1;
+        doingStep=1;
+        doingStepOld=0;
+        console.log("noi chuyen voi npc BGH")
+      }break;
+      default:{
+        sendPacket(context,listAuto[goNextWarp][1],listAuto[goNextWarp][2]);
+        stepAutoQuest--;
+        goNextWarp++;
+        canSendWarp=2;
+        console.log("thuc hien warp map")
+      }break;
+    }
+  }
 }
 // main
+
 var newProxy = proxy.createProxy(6414, "103.48.192.145", 6414,{
   upstream: function(context, data) {
-    logData(data);
-    //console.log("up")
-   // console.log(data)
-    if((Buffer.compare(data,ClientSendEndWarp)==0)&&(stepComboWarp>0)){
-        console.log("warp lan tiep theo")
+    //data2txt(data);
+    console.log("up")
+    console.log(data)
+    if((Buffer.compare(data,ClientSendEndAction)==0)&&(stepAutoQuest>0)){
         canSendWarp=1;
+        console.log("cho phep warp lan tiep theo")
     }
+    if((Buffer.compare(data,reSendWarp)==0)&&(canSendWarp==2)){
+      sendPacket(context,listAuto[goNextWarp-1][1],listAuto[goNextWarp-1][2]);
+    }
+    if((Buffer.compare(data,StopAutoQuest)==0)&&(canSendWarp==2)){
+      stepAutoQuest=0;
+      newProxy.doWhat=="end"
+    }
+    
     return data;
 },
 
 downstream: function(context, data) {
-  //go Warp
-  if(newProxy.warp=="warp"){
-    sendPacket(context,newProxy.textMove);
-    sendPacket(context,newProxy.textWarp);
-    newProxy.warp="end";
-  }
-  if(newProxy.warp=="comboWarp"){
-    //listCombo=[]
-    //goNextWarp=0;
-    //stepWarp=listWarp.length
-    if((canSendWarp==1)&&(stepComboWarp>0)){
-      switch(listCombo[goNextWarp][0].slice(0,4)){
-        case "Talk":{
-          newProxy.warp="talk";
-          newProxy.textMove=listCombo[goNextWarp][1];
-          newProxy.textWarp=listCombo[goNextWarp][2];
-          canSendWarp=3;
-          console.log("noi chuyen voi npc trong chuoi combo")
-        }break;
-        case "BGH-":{
-          newProxy.warp="goCastle";
-          newProxy.textMove=listCombo[goNextWarp][1];
-          newProxy.textWarp=listCombo[goNextWarp][2];
-          canSendWarp=4;
-          myChoose=listCombo[goNextWarp][0].slice(listCombo[goNextWarp][0].indexOf("-")+1,listCombo[goNextWarp][0].lastIndexOf("-"))
-          stepGoCastle=myChoose.length+1;
-          doStep=1;
-          console.log("noi chuyen voi npc BGH")
-        }break;
-        default:{
-          sendPacket(context,listCombo[goNextWarp][1]);
-          sendPacket(context,listCombo[goNextWarp][2]);
-          stepComboWarp--
-          goNextWarp++;
-          canSendWarp=2;
-          console.log("thuc hien warp  map khac")
-        }break;
-      }
-    }
-    if(stepComboWarp==0){
-      newProxy.warp="end";
-    }
-    
-  }
-  //go Castle
-  if(newProxy.warp=="goCastle"){
-    if(stepGoCastle<=0){
-      if(canSendWarp==4){
-        console.log("ket thuc noi chuyen trong chuoi combo")
-        stepComboWarp--
-        goNextWarp++;
-        canSendWarp=1;
-        sendPacket(context,ClientSendEnd);
-        sendPacket(context,ClientSendEnd);
-        sendPacket(context,Buffer.from("59e9afada1ac","hex"));
-        newProxy.warp="end";
-        doStep=0;
-        stepGoCastle=50;
-        newProxy.warp="comboWarp";
-      }else{
-        sendPacket(context,ClientSendEnd);
-        sendPacket(context,ClientSendEnd);
-        sendPacket(context,Buffer.from("59e9afada1ac","hex"));
-        newProxy.warp="end";
-        doStep=0;
-        stepGoCastle=50;
-      }
-    }else{
-      
-      if(doStep==1){
-        sendPacket(context,newProxy.textMove);
-        sendPacket(context,newProxy.textWarp);
-        stepGoCastle--;
-        doStep++;
-      }
-      if(Buffer.compare(data,packetCompare)==0){
-        if(doStep==2){
-          let sang=doStep-2;
-          mySelection(context,myChoose[sang])
-          stepGoCastle--;
-          doStep++;
-        }
-        if(doStep==3){
-          let sang=doStep-2;
-          mySelection(context,myChoose[sang])
-          stepGoCastle--;
-          doStep++;
-        }
-        if((doStep==4)&&(stepGoCastle>0)){
-          let sang=doStep-2;
-          mySelection(context,myChoose[sang])
-          stepGoCastle--;
-          doStep++;
-        }
-        if((doStep==5)&&(stepGoCastle>0)){
-          let sang=doStep-2;
-          mySelection(context,myChoose[sang])
-          stepGoCastle--;
-          doStep++;
-        }
-        if((doStep==6)&&(stepGoCastle>0)){
-          let sang=doStep-2;
-          mySelection(context,myChoose[sang])
-          stepGoCastle--;
-          doStep++;
-        }
-      }
-
-      
-    }
-    
-  }
-
   
-  //go Talk
-  if(newProxy.warp=="talk"){
-    sendPacket(context,newProxy.textMove);
-    sendPacket(context,newProxy.textWarp);
-    newProxy.warp="continuesTalk";
+  if(newProxy.doWhat=="autoQuest"){
+    autoQuest(context,data);
   }
-  if(newProxy.warp=="continuesTalk"){
-    //sendend dialog
-    if(Buffer.compare(data,SeverSendEndDialog)==0){
-      sendPacket(context,ClientSendEnd);
-    }
-    //sendend choose
-    if(data.length==21){
-        sendPacket(context,packetSelectOk);
-        sendPacket(context,ClientSendEnd);
-     // select 2:59 e9 ae ad b9 a4 b2  
-     // select tat/bat:59 e9 ae ad b9 a4 85
-    }
-    if(Buffer.compare(data,SeverSendEndTalk)==0){
-      sendPacket(context,ClientSendEnd);
-      if(canSendWarp==3){
-        console.log("ket thuc noi chuyen trong chuoi combo")
-        stepComboWarp--
-        goNextWarp++;
-        canSendWarp=1;
-        newProxy.warp="comboWarp";
-      }else{
-        newProxy.warp="end";
-      }
-     
-    }
-    if(data.length>22){
-      sendPacket(context,ClientSendEnd);
-    }
-    /*
-    if(Buffer.compare(data,Buffer.from("59e9bcadb9acadadadaeabaeafadadadadadadacad","hex"))==0){
-      context.serviceSocket.write(Buffer.from("59e9aeadb9a4b3","hex"));
-      newProxy.warp="end"
-    }*/
-    /*
-    if(Buffer.compare(data,Buffer.from("59e9a8ada6acaeafad","hex"))==0){
-      //context.serviceSocket.write(Buffer.from("59e9afadb9ab","hex"));
-      context.serviceSocket.write(Buffer.from("59e9aeadafafcc","hex"));
-      newProxy.warp="end"
-    }*/
+  if(newProxy.doWhat=="goCastle"){
+    goCastle(context,data);
+  }
+  if(newProxy.doWhat=="warp"){
+    sendPacket(context,newProxy.doWhere,newProxy.doHow);
+    newProxy.doWhat="end";
+  }
+  if(newProxy.doWhat=="talk"){
+    goTalk(context,data);
+  }
+  
     
+   // if(data.length!=17){
+     // console.log("dow")
+     // console.log(data)
+   // }
    
-  }
-  
-    //console.log("dow")
-   //console.log(data)
   
   
     return data;
@@ -258,42 +243,47 @@ app.on('window-all-closed', () => {
 app.on('activate', () => {
   if (BrowserWindow.getAllWindows().length === 0) {createWindow();}
 });
-ipcMain.on("addListWarp",function (event, arg) {
-  let selectionPacket=arg[0].slice(0,4)
-  switch(selectionPacket){
+ipcMain.on("action",function (event, arg) {
+  let selectionAction=arg[0].slice(0,4)
+  switch(selectionAction){
     case "Talk": {
-      newProxy.warp="talk";
-      newProxy.textMove=arg[1][0];
-      newProxy.textWarp=arg[1][1];
+      newProxy.doWhat="talk";
+      newProxy.doWhere=arg[1][0];
+      newProxy.doHow=arg[1][1];
+      stepTalk=1;
     } break;
     case "BGH-": {
-      newProxy.warp="goCastle";
-      newProxy.textMove=arg[1][0];
-      newProxy.textWarp=arg[1][1];
+      newProxy.doWhat="goCastle";
+      newProxy.doWhere=arg[1][0];
+      newProxy.doHow=arg[1][1];
       myChoose=arg[0].slice(arg[0].indexOf("-")+1,arg[0].lastIndexOf("-"))
       stepGoCastle=myChoose.length+1;
-      doStep=1;
+      doingStep=1;
+      doingStepOld=0;
       event.reply('sendListWarp',arg[0].slice(arg[0].lastIndexOf("-")+1))
     } break;
     default:{
-      newProxy.warp="warp";
-      newProxy.textMove=arg[1][0];
-      newProxy.textWarp=arg[1][1];
+      newProxy.doWhat="warp";
+      newProxy.doWhere=arg[1][0];
+      newProxy.doHow=arg[1][1];
       event.reply('sendListWarp', arg[0])
     }break;
   }
 });
-ipcMain.on("comboWarp",function (event, arg) {
-
-  listCombo.length=0;
+ipcMain.on("autoQuest",function (event, arg) {
+  //console.log(arg)
+  listAuto.length=0;
   for(let i=0;i<arg.length;i++){
-    listCombo.push(arg[i])
+    listAuto.push(arg[i])
   }
-  stepComboWarp=listCombo.length;
+  stepAutoQuest=listAuto.length;
   goNextWarp=0;
   canSendWarp=1;
-  newProxy.warp="comboWarp";
-  console.log(arg)
+  newProxy.doWhat="autoQuest";
+});
+ipcMain.on("autoQuest1",function (event, arg) {
+ 
+  event.reply('turnOnQuest', arg)
 });
 
 

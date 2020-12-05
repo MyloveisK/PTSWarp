@@ -1,0 +1,107 @@
+{
+    "Quest Cứu Đông Quận":{
+        "Finish Q1":["Rừng Đông Quận","Thành Đông Quận","Đại Độ Đông Quận","Quan Phủ Đông Quận","Talk:Vương Hoành"],
+        "Start Q-Talk Vương Hoành":["Quan Phủ Đông Quận","Talk:Vương Hoành"],
+        "Talk-Thào Tháo":["Quan Phủ Đông Quận","Đại Độ Đông Quận","Thành Đông Quận","Rừng Đông Quận","Thanh Châu","Rừng Vi Sơn","Talk:Tào Tháo-VS"],
+        "Thành Đông Quận":["Rừng Vi Sơn","Thanh Châu","Rừng Đông Quận","Thành Đông Quận"],
+        "Talk-Vương Hoành":["Thành Đông Quận","Đại Độ Đông Quận","Quan Phủ Đông Quận","Talk:Vương Hoành"]
+    },
+    "Quest Đánh bại quân Hắc Sơn":{
+        "Start Q":["Quan Phủ Đông Quận","Talk:Vương Hoành"],
+        "Rừng Đôn Khưu":["Quan Phủ Đông Quận","Đại Độ Đông Quận","Thành Đông Quận","Rừng Đông Quận","Thanh Châu","Rừng Đôn Khưu"],
+        "Talk:Vương Hoành":["Rừng Đôn Khưu","Thanh Châu","Rừng Đông Quận","Thành Đông Quận","Đại Độ Đông Quận","Quan Phủ Đông Quận","Talk:Vương Hoành"]
+    },
+    "Quest Thảo phạt Khăn vàng":{
+        "Start Q":["Quan Phủ Đông Quận","Talk:Vương Hoành"],
+        "Talk:Tào Tháo-VS":["Quan Phủ Đông Quận","Đại Độ Đông Quận","Thành Đông Quận","Rừng Đông Quận","Thanh Châu","Rừng Vi Sơn","Talk:Tào Tháo-VS"],
+        "Talk:Hà Hỷ":["Rừng Vi Sơn","Thanh Châu","U Châu","Rừng Triều Ca","Động Triều Ca 1","Động Triều Ca 2", "Động Triều Ca 3","Động Triều Ca 7","Talk:Hà Hỷ"],
+        "Talk:Thái Dương":["Động Triều Ca 7","Động Triều Ca 3","Động Triều Ca 2","Động Triều Ca 4","Động Triều Ca 8","Động Triều Ca 9","Talk:Thái Dương"]
+    },
+    "Quest Truy kích Khang Đình":{
+        "Go Thanh Châu":["Động Triều Ca 9","Động Triều Ca 8","Động Triều Ca 4","Động Triều Ca 2","Động Triều Ca 1","Rừng Triều Ca","U Châu","Thanh Châu"],
+        "Thành Đông Quận":["Thanh Châu","Rừng Đông Quận","Thành Đông Quận"],
+        "Thành Từ Châu":["Thành Đông Quận","BGH-2431-Thành Từ Châu"],
+        "Talk:Lưu Tường":["Thành Từ Châu","Từ Châu","Rừng Tương Huyện 1","Rừng Tương Huyện 3","Talk:Lưu Tường"],
+        "Talk:Huệ Cừ":["Rừng Tương Huyện 3","Rừng Tương Huyện 1","Từ Châu","Y Nhị Động 1","Talk:Huệ Cừ"],
+        "Talk:Viên Thuật":["Y Nhị Động 1","Từ Châu","Y Nhị Trại 1","Y Nhị Trại 2","Lều Viên Thuật","Talk:Viên Thuật"],
+        "BGH-221-Thành Đông Quận":["Lều Viên Thuật","Y Nhị Trại 2","Y Nhị Trại 1","Từ Châu","Thành Từ Châu","BGH-221-Thành Đông Quận"]
+    },
+    "Quest Trận chiến Từ Châu":{
+        "Đại Độ Đông Quận":["Thành Đông Quận","Đại Độ Đông Quận"],
+        "Talk:Tào Tháo-QPDQ":["Quan Phủ Đông Quận","Talk:Tào Tháo-QPDQ"],
+        "Thành Từ Châu":["Quan Phủ Đông Quận","Đại Độ Đông Quận","Thành Đông Quận","BGH-2431-Thành Từ Châu"],
+        "Talk:Tào Báo":["Thành Từ Châu","Từ Châu","Rừng Hạ Thái","Talk:Tào Báo"],
+        "Thành Đông Quận":["Rừng Hạ Thái","Từ Châu","Thành Từ Châu","BGH-221-Thành Đông Quận"],
+        "Thanh Châu":["Thành Đông Quận","Rừng Đông Quận","Thanh Châu"],
+        "Talk:Thương Binh":["Thanh Châu","Động Khoa Châu 7","Động Khoa Châu 17","Động Khoa Châu 6","Talk:Thương Binh"],
+        "Ra Thanh Châu":["Động Khoa Châu 6","Động Khoa Châu 17","Động Khoa Châu 7","Thanh Châu"],
+        "Tới Đại Độ Đông Quận":["Thanh Châu","Rừng Đông Quận","Thành Đông Quận","Đại Độ Đông Quận"],
+        "Talk Tào Tháo":["Quan Phủ Đông Quận","Talk:Tào Tháo-QPDQ"]
+        
+    },
+    "Quest Trận chiến Kình Châu":{
+        "Start Q:Talk Thào Tháo":["Quan Phủ Đông Quận","Talk:Tào Tháo-QPDQ"],
+        "Ra Thanh Châu":["Quan Phủ Đông Quận","Đại Độ Đông Quận","Thành Đông Quận","Rừng Đông Quận","Thanh Châu"],
+        "Talk:HVQ":["Thanh Châu","Động Thái Sơn 1","Động Thái Sơn 1-1","Động Thái Sơn 1-2","Động Thái Sơn 2","Talk:HVQ"],
+        "Động Thái Sơn 2-2":["Động Thái Sơn 2","Động Thái Sơn 2-1","Động Thái Sơn 2-2"],
+        "Talk:Tàng Bá":["Động Thái Sơn 2-2","Động Thái Sơn 3","Động Thái Sơn 3-2","Động Thái Sơn 3-3","Động Thái Sơn 4","Talk:Tàng Bá"],
+        "Talk:người hầu":["Động Thái Sơn 4","Talk:người hầu"],
+        "Ra động":["Động Thái Sơn 4","Động Thái Sơn 3-3","Động Thái Sơn 3-2","Động Thái Sơn 3","Động Thái Sơn 2-2","Động Thái Sơn 2-1","Động Thái Sơn 2","Động Thái Sơn 1-2","Động Thái Sơn 1-1","Động Thái Sơn 1","Thanh Châu"],
+        "Talk:Duyệt C.B":["Thanh Châu","Rừng Đông Quận","Thành Đông Quận","Đại Độ Đông Quận","Ngoại Thành Đông Quận","Talk:Duyệt C.B"],
+        "Talk:Cao Nhã":["Ngoại Thành Đông Quận","Đại Độ Đông Quận","Thành Đông Quận","Rừng Đông Quận","Thanh Châu","Việt Châu","Rừng Trần Lưu 1","Rừng Trần Lưu 2", "Talk:Cao Nhã"],
+        "Talk:Tiết Lan":["Rừng Trần Lưu 2","Rừng Trần Lưu 1","Việt Châu","Sơn động Hứa Xương 1","Sơn động Hứa Xương 5","Sơn động Hứa Xương 2","Sơn động Hứa Xương 6","Sơn động Hứa Xương 3", "Talk:Tiết Lan"],
+        "Talk:Đội Áo Đen":["Sơn động Hứa Xương 3","Sơn động Hứa Xương 6","Sơn động Hứa Xương 2","Talk:Đội Áo Đen"],
+        "Talk:Lữ Bố":["Sơn động Hứa Xương 2","Talk:Lữ Bố"],
+        "Nhà Tào Tháo":["Sơn động Hứa Xương 2","Sơn động Hứa Xương 5","Sơn động Hứa Xương 1","Việt Châu","Thành Hứa Xương","Đường lớn Hứa Xương","Hứa Xương Thứ Nhai","Nhà Tào Tháo"]
+    },
+    "Quest Phụng nghinh Thiên Tử":{
+        "Q81":["Nhà Tào Tháo","Hứa Xương Thứ Nhai","Đường lớn Hứa Xương","Thành Hứa Xương","Việt Châu", "Rừng Vĩnh Xuyên","Thôn Vĩnh Xuyên","Bần Hộ"],
+        "Q82-thôn vinh xuyên":["Thôn Vĩnh Xuyên", "Rừng Vĩnh Xuyên","Việt Châu","Thành Lạc Dương","Đường lớn Lạc Dương","Cửa Thành Lạc Dương","Cầu Tị Thủy","Đường lớn HLQ","Hoàng Lăng","Hoàng Lăng Động 1"],
+        "Q83":["Hoàng Lăng","Talk:Hàn Xiêm"],
+        "Q84":["Hoàng Lăng","Hoàng Lăng Động 1","Talk:Dương Phụng"],
+        "Q85":["Hoàng Lăng Động 1","Hoàng Lăng Động 2","Hoàng Lăng Động 3","Hoàng Lăng Động 4","Hoàng Lăng Động 5", "Hoàng Lăng Động 6"],
+        "Q86":["Hoàng Lăng Động 6","Hoàng Lăng Động 5","Hoàng Lăng Động 4","Hoàng Lăng Động 3","Hoàng Lăng Động 2","Hoàng Lăng Động 1","Hoàng Lăng","Đường lớn HLQ","Cầu Tị Thủy","Cửa Thành Lạc Dương"],
+        "Q87":["Cửa Thành Lạc Dương","BGH-221-Thành Hứa Xương"],
+        "Q88":["Thành Hứa Xương","Đường lớn Hứa Xương","Điểm Binh Đài","Talk:Tào Tháo-DBD"]
+    },
+    "Quest Đại bại Nhục Thủy":{
+        "Q91":["Điểm Binh Đài","Talk:Tào Tháo-DBD"],
+        "Q92":["Điểm Binh Đài","Đường lớn Hứa Xương","Thành Hứa Xương","Việt Châu","Uyển Thành","Đường lớn Uyển Thành","Phổ Hộ","Talk:Tào An Dân"],
+        "Q93":["Phổ Hộ","Đường lớn Uyển Thành","Phú Hộ","Talk:Trương Tú"],
+        "Q94":["Phú Hộ","Đường lớn Uyển Thành","Phổ Hộ","Talk:Tào An Dân"],
+        "Q95":["Phổ Hộ","Đường lớn Uyển Thành","Uyển Thành","Việt Châu","Rừng Vũ Âm","Talk:Tào Tháo-Vũ Âm"],
+        "Q96":["Rừng Vũ Âm","Việt Châu","Uyển Thành","Đường lớn Uyển Thành","Cửa Động Thiên Độc","Động Thiên Độc 1","Động Thiên Độc 11","Động Thiên Độc 2","Động Thiên Độc 10","Động Thiên Độc 5","Động Thiên Độc 13","Động Thiên Độc 7","Động Thiên Độc 14","Talk:Điển Vi"],
+        "Q97":["Động Thiên Độc 14","Động Thiên Độc 7","Động Thiên Độc 13","Động Thiên Độc 5","Động Thiên Độc 10","Động Thiên Độc 2","Động Thiên Độc 11","Động Thiên Độc 1","Cửa Động Thiên Độc"],
+        "Q98":["Cửa Động Thiên Độc","Đường lớn Uyển Thành","Uyển Thành","Việt Châu","Thành Hứa Xương","Đường lớn Hứa Xương","Điểm Binh Đài","Talk:Tào Tháo-DBD"]
+    },
+    "Quest Trận chiến Thọ Xuân":{
+        "Q101":["Điểm Binh Đài","Talk:Trình Lập"],
+        "Q1011-bat pet":["Điểm Binh Đài","Đường lớn Hứa Xương","Thành Hứa Xương","BGH-221-Thành Từ Châu"],
+        "Q1012-bat pet":["Thành Từ Châu","Từ Châu","Núi Mang Thương 1","Núi Mang Thương 2","Núi Mang Thương 3"],
+        "Q1013-bat pet":["Núi Mang Thương 3","Núi Mang Thương 2","Núi Mang Thương 1","Từ Châu","Thành Từ Châu","BGH-2431-Thành Hứa Xương"],
+        "Q1014-bat pet ok":["Thành Hứa Xương","Đường lớn Hứa Xương","Điểm Binh Đài","Talk:Trình Lập"],
+        "Q1014-da co pet":["Điểm Binh Đài","Talk:Trình Lập"],
+        "Q102":["Điểm Binh Đài","Đường lớn Hứa Xương","Thành Hứa Xương","BGH-221-Thành Từ Châu"],
+        "Q103":["Thành Từ Châu","Từ Châu","Đầm lầy Thành Đức","Sơn động Thành Đức","Talk:Tàn binh"],
+        "Q104":["Sơn động Thành Đức","Đầm lầy Thành Đức","Từ Châu","Thành Thọ Xuân","Đường lớn Thọ Xuân","Rừng Thọ Xuân","Sđ Thọ Xuân 1","Sđ Thọ Xuân 2","Sđ Thọ Xuân 6","Sđ Thọ Xuân 7","Talk:Trường Đ.Binh"],
+        "Q105":["Sđ Thọ Xuân 7","Sđ Thọ Xuân 8","Talk:Kiều Sanh"],
+        "Q106":["Sđ Thọ Xuân 8","Sđ Thọ Xuân 7","Sđ Thọ Xuân 6","Sđ Thọ Xuân 2","Sđ Thọ Xuân 1","Rừng Thọ Xuân","Đường lớn Thọ Xuân","Thành Thọ Xuân","BGH-221-Thành Từ Châu"],
+        "Q107":["Thành Từ Châu","BGH-2431-Thành Hứa Xương"],
+        "Q108":["Thành Hứa Xương","Đường lớn Hứa Xương","Điểm Binh Đài"]
+    },
+    "Quest Bạch Môn bắt Lữ Bố":{
+        "Q111":["Điểm Binh Đài","Talk:Quách Gia"],
+        "Q112":["Điểm Binh Đài","Đường lớn Hứa Xương","Thành Hứa Xương","BGH-221-Thành Từ Châu"],
+        "Q113":["Thành Từ Châu","Từ Châu","Rừng Tương Huyện 1","Rừng Tương Huyện 2","Talk:Hầu Giai"],
+        "Q114":["Rừng Tương Huyện 2","Rừng Tương Huyện 1","Từ Châu","Rừng Hoài Âm","Talk:Hứa Kì"],
+        "Q115":["Rừng Hoài Âm","Từ Châu","Thành Hạ Bì","Đường lớn Hạ Bì","Nhai đạo Hạ Bì","Talk:Hầu Thành"],
+        "Q116":["Nhai đạo Hạ Bì","Talk:Hầu Thành"],
+        "Q117":["Nhai đạo Hạ Bì","Đường lớn Hạ Bì","Cửa bắc Hạ Bì"],
+        "Q118":["Cửa bắc Hạ Bì","Đường lớn Hạ Bì","Thành Hạ Bì","Từ Châu","Thành Từ Châu"],
+        "Q119":["Thành Từ Châu","BGH-2431-Thành Hứa Xương"],
+        "Q119-1":["Thành Hứa Xương","Đường lớn Hứa Xương","Điểm Binh Đài","Talk:Quách Gia"],
+        "Về Đông Quận 1":["Điểm Binh Đài","Đường lớn Hứa Xương","Thành Hứa Xương","BGH-221-Thành Từ Châu"],
+        "Về Đông Quận 2":["Thành Từ Châu","BGH-221-Thành Đông Quận"]
+    }
+    
+}
