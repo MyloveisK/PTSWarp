@@ -16,7 +16,6 @@
     IP260601</br>
     BAT26NHB</br>
     Vị Trí : <span id="inHere"></span></br>
-
     <input type="text" id="inputMap" value="" list="inputMap1">
     <datalist id="inputMap1">
 
@@ -46,10 +45,10 @@
     const listWarp = document.getElementById('listWarp');
     const inHere = document.getElementById('inHere');
     const autoQuest = document.getElementById('autoQuest');
-    
-
+   
     var myData = JSON.parse(fs.readFileSync('dataWarp.json'));
     var myDataQuest=JSON.parse(fs.readFileSync('dataQuest.json'));
+    
 
     function addButton(mapName){
         inHere.innerHTML=mapName; // show map name in here
@@ -78,6 +77,7 @@
     autoQuest.addEventListener('click', function () {
         listWarp.innerHTML="";
         let x=document.getElementById("inputMap").value;
+        inHere.innerHTML=x
         let listAuto=Object.keys(myDataQuest[x]); //get list map
         for(let i=0;i<listAuto.length;i++){
             let arg=[];
@@ -95,6 +95,7 @@
                 
             
             btn.onclick=function(){
+                document.getElementById("inputMap").value="";
                 ipcRenderer.send("autoQuest",arg); 
                 ipcRenderer.send("autoQuest1",listAuto[i]); 
             }
@@ -103,6 +104,7 @@
         }
 
     });
+   
     ipcRenderer.on("sendListWarp",(event,arg)=>{
         let selectionPacket=arg.slice(0,4)
         inHere.innerHTML=arg;
@@ -115,7 +117,7 @@
     ipcRenderer.on("turnOnQuest",(event,arg)=>{
        document.getElementById(arg).style.backgroundColor="yellow"
     }); 
-
+    
     
     </script>
     

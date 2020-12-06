@@ -4,6 +4,7 @@ const proxy = require("node-tcp-proxy");
 const util = require("util");
 const fs = require('fs');
 
+
 //write to logWarp.txt
 var dataWarp="";
 var myClear=0;
@@ -18,8 +19,9 @@ var SeverSendEndTalk1=Buffer.from("59e9afada8a959e9afada2a7","hex");
 
 
 
-var reSendWarp=Buffer.from("59e9aeadafafcc>","hex");
-var StopAutoQuest=Buffer.from("59e9aeadafafcf>","hex");
+var reSendWarp=Buffer.from("59e9aeadafafcc","hex");
+var StopAutoQuest=Buffer.from("59e9aeadafafcf","hex");
+var sang15=Buffer.from("59e9aeadafafce","hex");
 var packetSelectOk=Buffer.from("59e9aeadb9a4b3","hex");
 
 // variable for goCastle
@@ -104,7 +106,7 @@ function goTalk(context,data){
       console.log("ket thuc hoi thoai")
     }
     //sendend choose
-    if(data.length>30){
+    if(data.length>=21){
       context.serviceSocket.write(packetSelectOk);
       //context.serviceSocket.write(ClientSendEnd);
      console.log("goi lua chon 1 len sever")
@@ -178,8 +180,8 @@ function autoQuest(context){
 var newProxy = proxy.createProxy(6414, "103.48.192.145", 6414,{
   upstream: function(context, data) {
     //data2txt(data);
-    console.log("up")
-    console.log(data)
+    //console.log("up")
+    //console.log(data)
     if((Buffer.compare(data,ClientSendEndAction)==0)&&(stepAutoQuest>0)){
         canSendWarp=1;
         console.log("cho phep warp lan tiep theo")
@@ -191,6 +193,9 @@ var newProxy = proxy.createProxy(6414, "103.48.192.145", 6414,{
       stepAutoQuest=0;
       newProxy.doWhat=="end"
     }
+    if((Buffer.compare(data,sang15)==0)&&(canSendWarp==2)){
+      context.serviceSocket.write(ClientSendEnd);
+    }
     
     return data;
 },
@@ -199,6 +204,12 @@ downstream: function(context, data) {
   
   if(newProxy.doWhat=="autoQuest"){
     autoQuest(context,data);
+  }
+  if(newProxy.doWhat=="npcan"){
+    console.log("noi chuyen npc an")
+    sendPacket(context,newProxy.doWhere,newProxy.doHow);
+    context.serviceSocket.write(ClientSendEnd);
+    context.serviceSocket.write(ClientSendEnd);
   }
   if(newProxy.doWhat=="goCastle"){
     goCastle(context,data);
@@ -215,7 +226,7 @@ downstream: function(context, data) {
    // if(data.length!=17){
      // console.log("dow")
      // console.log(data)
-   // }
+  //  }
    
   
   
@@ -262,6 +273,11 @@ ipcMain.on("action",function (event, arg) {
       doingStepOld=0;
       event.reply('sendListWarp',arg[0].slice(arg[0].lastIndexOf("-")+1))
     } break;
+    case "NPC1": {
+      newProxy.doWhat="npcan";
+      newProxy.doWhere=arg[1][0];
+      newProxy.doHow=arg[1][1];
+    } break;
     default:{
       newProxy.doWhat="warp";
       newProxy.doWhere=arg[1][0];
@@ -282,7 +298,6 @@ ipcMain.on("autoQuest",function (event, arg) {
   newProxy.doWhat="autoQuest";
 });
 ipcMain.on("autoQuest1",function (event, arg) {
- 
   event.reply('turnOnQuest', arg)
 });
 

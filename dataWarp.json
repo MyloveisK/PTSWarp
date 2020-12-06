@@ -67,12 +67,18 @@
     },
     "Rừng Đông Quận":{
         "Thanh Châu":["59e9a4adabacaf1bad12a47d66","59e9a9adb9a5acad"],
-        "Thành Đông Quận":["59e9a4adabacaab7abbeac7d71","59e9a9adb9a5aead"]
-    },
+        "Thành Đông Quận":["59e9a4adabacaab7abbeac7d71","59e9a9adb9a5aead"],
+        "Talk:Hoàng Long":["59e9a6adabace6d5adadaa23a832ac","59e9a9adb9a5a8ad"]
+        
+    }, 
     "Thành Đông Quận":{
         "Rừng Đông Quận":["59e9a4adabaca9cbad66af7d7a","59e9a9adb9a5afad"],
         "Đại Độ Đông Quận":["59e9a4adabacabe7ae2aad7d57","59e9a9adb9a5acad"],
-        "BGH-2431-Thành Từ Châu":["59e9a4adabacae4baf22af8c5f","59e9a9adb9aca5ad"]
+        "BGH-2431-Thành Từ Châu":["59e9a4adabacae4baf22af8c5f","59e9a9adb9aca5ad"],
+        "Talk:Lôi Công":["59e9a4adabacaa63ac76ac8c5b","59e9a9adb9a5aead"],
+        "Talk:Lý Đại Mục":["59e9a4adabacaac3af26ac8c4b","59e9a9adb9a5a9ad"]
+
+
     },
     "BGH-2431-Thành Từ Châu":{
         "Rừng Đông Quận":["59e9a4adabaca9cbad66af7d7a","59e9a9adb9a5afad"],
@@ -117,8 +123,27 @@
     },
     "Rừng Đôn Khưu":{
         "Thanh Châu":["59e9a4adabacac53a552ad7d50","59e9a9adb9a5acad"],
-        "Talk:Giai Cố":["59e9a4adabafa85ea8aaaba141","59e9a4adabafa85ea8aaaba141"],
-        "Talk:Bạch Hiểu":["59e9a4adabacab5babceaba166","59e9a4adabacab5babceaba166"]
+        "Talk:Ngũ Lộc":["59e9a4adabacafe7a5ceac8c78","59e9a9adb9a5aead"],
+        "Talk:Giai Cố":["59e9a4adabaca883abceab8c4f","59e9a9adb9a5a9ad"],
+        "Talk:Bạch Hiểu":["59e9a4adabacabf7aaceab8c5c","59e9a9adb9a5afad"]
+    },
+    "Talk:Ngũ Lộc":{
+        "Thanh Châu":["59e9a4adabacac53a552ad7d50","59e9a9adb9a5acad"],
+        "Talk:Ngũ Lộc":["59e9a4adabacafe7a5ceac8c78","59e9a9adb9a5aead"],
+        "Talk:Giai Cố":["59e9a4adabaca883abceab8c4f","59e9a9adb9a5a9ad"],
+        "Talk:Bạch Hiểu":["59e9a4adabacabf7aaceab8c5c","59e9a9adb9a5afad"]
+    },
+    "Talk:Giai Cố":{
+        "Thanh Châu":["59e9a4adabacac53a552ad7d50","59e9a9adb9a5acad"],
+        "Talk:Ngũ Lộc":["59e9a4adabacafe7a5ceac8c78","59e9a9adb9a5aead"],
+        "Talk:Giai Cố":["59e9a4adabaca883abceab8c4f","59e9a9adb9a5a9ad"],
+        "Talk:Bạch Hiểu":["59e9a4adabacabf7aaceab8c5c","59e9a9adb9a5afad"]
+    },
+    "Talk:Bạch Hiểu":{
+        "Thanh Châu":["59e9a4adabacac53a552ad7d50","59e9a9adb9a5acad"],
+        "Talk:Ngũ Lộc":["59e9a4adabacafe7a5ceac8c78","59e9a9adb9a5aead"],
+        "Talk:Giai Cố":["59e9a4adabaca883abceab8c4f","59e9a9adb9a5a9ad"],
+        "Talk:Bạch Hiểu":["59e9a4adabacabf7aaceab8c5c","59e9a9adb9a5afad"]
     },
     "Động Khoa Châu 7":{
         "Thanh Châu":["59e9a4adabacacbbad96ac7d55","59e9a9adb9a5acad"],
@@ -201,7 +226,20 @@
     "Thành Từ Châu":{
         "Từ Châu":["59e9a4adabaca82bae1aaf7f5a","59e9a9adb9a5afad"],
         "BGH-2431-Thành Hứa Xương":["59e9a4adabacaf5fad22af8c64","59e9a9adb9aca6ad"],
-        "BGH-221-Thành Đông Quận":["59e9a4adabacaf5fad22af8c64","59e9a9adb9aca6ad"]
+        "BGH-221-Thành Đông Quận":["59e9a4adabacaf5fad22af8c64","59e9a9adb9aca6ad"],
+        "Đường lớn Từ Châu":["59e9a4adabacac93addead8c78","59e9a9adb9a5acad"]
+    },
+    "Đường lớn Từ Châu":{
+        "Thành Từ Châu":["59e9a4adabacab57afcaaf8c4c","59e9a9adb9a5acad"],
+        "Nhà Đỗ Bình":["59e9a4adabacacffad52ad8c45","59e9a9adb9a5aaad"]
+    },
+    "Nhà Đỗ Bình":{
+        "Đường lớn Từ Châu":["59e9a4adabacaba7af6aac8c67","59e9a9adb9a5acad"],
+        "Nhặt Item":["59e9a4adabacaeb7ac6aac8c44","59e9a9adbaafafad"]
+    },
+    "Nhặt Item":{
+        "Đường lớn Từ Châu":["59e9a4adabacaba7af6aac8c67","59e9a9adb9a5acad"],
+        "Nhặt Item":["59e9a4adabacaeb7ac6aac8c44","59e9a9adbaafafad"]
     },
     "BGH-221-Thành Đông Quận":{
         "Từ Châu":["59e9a4adabaca82bae1aaf7f5a","59e9a9adb9a5afad"],
@@ -223,7 +261,28 @@
         "Cửa bắc Hạ Bì":["59e9a4adabacaa07afa2adb141","59e9a9adb9a5a4ad"]
     },
     "Cửa bắc Hạ Bì":{
-        "Đường lớn Hạ Bì":["59e9a4adabacaeffad7ea9b154","59e9a9adb9a5acad"]
+        "Đường lớn Hạ Bì":["59e9a4adabacaeffad7ea9b154","59e9a9adb9a5acad"],
+        "Talk:Đai Cang":["59e9a4adabacaaa3aeaeaf8c51","59e9a9adb9a5afad"],
+        "Talk:Trương Liêu":["59e9a4adabacaa7bae46ad8c79","59e9a9adb9a5aead"],
+        "Talk:Lữ Bố-Hạ Bì":["59e9a4adabaca8bfa9beac8c4c","59e9a9adb9aca3ad"]
+    },
+    "Talk:Đai Cang":{
+        "Đường lớn Hạ Bì":["59e9a4adabacaeffad7ea9b154","59e9a9adb9a5acad"],
+        "Talk:Đai Cang":["59e9a4adabacaaa3aeaeaf8c51","59e9a9adb9a5afad"],
+        "Talk:Trương Liêu":["59e9a4adabacaa7bae46ad8c79","59e9a9adb9a5aead"],
+        "Talk:Lữ Bố-Hạ Bì":["59e9a4adabaca8bfa9beac8c4c","59e9a9adb9aca3ad"]
+    },
+    "Talk:Trương Liêu":{
+        "Đường lớn Hạ Bì":["59e9a4adabacaeffad7ea9b154","59e9a9adb9a5acad"],
+        "Talk:Đai Cang":["59e9a4adabacaaa3aeaeaf8c51","59e9a9adb9a5afad"],
+        "Talk:Trương Liêu":["59e9a4adabacaa7bae46ad8c79","59e9a9adb9a5aead"],
+        "Talk:Lữ Bố-Hạ Bì":["59e9a4adabaca8bfa9beac8c4c","59e9a9adb9aca3ad"]
+    },
+    "Talk:Lữ Bố-Hạ Bì":{
+        "Đường lớn Hạ Bì":["59e9a4adabacaeffad7ea9b154","59e9a9adb9a5acad"],
+        "Talk:Đai Cang":["59e9a4adabacaaa3aeaeaf8c51","59e9a9adb9a5afad"],
+        "Talk:Trương Liêu":["59e9a4adabacaa7bae46ad8c79","59e9a9adb9a5aead"],
+        "Talk:Lữ Bố-Hạ Bì":["59e9a4adabaca8bfa9beac8c4c","59e9a9adb9aca3ad"]
     },
     "Nhai đạo Hạ Bì":{
         "Đường lớn Hạ Bì":["59e9a4adabacac87addaacb147","59e9a9adb9a5acad"],
@@ -529,8 +588,18 @@
     },
     "Hoàng Lăng Động 6":{
         "Hoàng Lăng Động 5":["59e9a4adabacab33a462aeb179","59e9a9adb9a5acad"],
-        "Talk1:PHTQ":["59e9a4adabacac5fada6a98f4d","59e9a9adb9acacad"],
-        "Talk1:Lý Thôi":["59e9a4adabacac5fada6a98f4d","59e9a9adb9acafad"]
+        "Talk:PHTQ":["59e9a4adabacac5fada6a98f4d","59e9a9adb9acacad"],
+        "Talk:Lý Thôi":["59e9a4adabacac5fada6a98f4d","59e9a9adb9acafad"]
+    },
+    "Talk1:PHTQ":{
+        "Hoàng Lăng Động 5":["59e9a4adabacab33a462aeb179","59e9a9adb9a5acad"],
+        "Talk:PHTQ":["59e9a4adabacac5fada6a98f4d","59e9a9adb9acacad"],
+        "Talk:Lý Thôi":["59e9a4adabacac5fada6a98f4d","59e9a9adb9acafad"]
+    },
+    "Talk1:Lý Thôi":{
+        "Hoàng Lăng Động 5":["59e9a4adabacab33a462aeb179","59e9a9adb9a5acad"],
+        "Talk:PHTQ":["59e9a4adabacac5fada6a98f4d","59e9a9adb9acacad"],
+        "Talk:Lý Thôi":["59e9a4adabacac5fada6a98f4d","59e9a9adb9acafad"]
     },
     "Rừng Vũ Âm":{
         "Việt Châu":["59e9a4adabacaacfa496acb178","59e9a9adb9a5acad"],

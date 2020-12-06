@@ -1,8 +1,8 @@
- move
+move
 up
-<Buffer 59 e9 a4 ad ab ac ae 87 a8 ea a9 8c 47>
+<Buffer59e9a4adabacae87a8eaa98c47>
 dow
-<Buffer 59 e9 a6 ad ab ac e6 d5 ad ad ae 87 a8 ea a9>
+<Buffer59e9a6adabace6d5adadae87a8eaa9>
 
 
 
@@ -10,113 +10,188 @@ dow
 talk
 
 up
-<Buffer 59 e9 a9 ad b9 ac ac ad>
+<Buffer59e9a9adb9acacad>
 dow
-<Buffer 59 e9 af ad ab af>
+<Buffer59e9afadabaf>
 dow
-<Buffer 59 e9 bc ad b9 ac ad ad ad ac ac ae ac ad ad ad ad ad ad 62 82>
+<Buffer59e9bcadb9acadadadacacaeacadadadadadad6282>
 up
-<Buffer 59 e9 af ad b9 ab>
+<Buffer59e9afadb9ab>
 dow
-<Buffer 59 e9 af ad b9 a5>
+<Buffer59e9afadb9a5>
 dow
-<Buffer 59 e9 af ad a8 a9 59 e9 af ad a2 a7>
+<Buffer59e9afada8a959e9afada2a7>
 
 
 
 up
-<Buffer 59 e9 a9 ad b9 a9 af ad>
+<Buffer59e9a9adb9a9afad>
 dow
-<Buffer 59 e9 af ad b9 a5>
+<Buffer59e9afadb9a5>
 up
-<Buffer 59 e9 a9 ad b9 a5 af ad>
+<Buffer59e9a9adb9a5afad>
 dow
-<Buffer 59 e9 af ad a8 a9 59 e9 af ad a2 a7>
+<Buffer59e9afada8a959e9afada2a7>
 dow
-<Buffer 59 e9 af ad b9 aa>
+<Buffer59e9afadb9aa>
 up
-<Buffer 59 e9 af ad b9 ab>
+<Buffer59e9afadb9ab>
 dow
-<Buffer 59 e9 af ad b9 aa>
+<Buffer59e9afadb9aa>
 up
-<Buffer 59 e9 af ad b9 ab>
+<Buffer59e9afadb9ab>
 dow
-<Buffer 59 e9 af ad 84 a3 59 e9 a0 ad a1 e6 d5 ad ad 0e 86 e7 ac 37 ac ae ad>
+<Buffer59e9afad84a359e9a0ada1e6d5adad0e86e7ac37acaead>
 dow
-<Buffer 59 e9 af ad b9 a5 59 e9 af ad a8 a9 59 e9 af ad a2 a7>
+<Buffer59e9afadb9a559e9afada8a959e9afada2a7>
 up
-<Buffer 59 e9 af ad ba 9d>
+<Buffer59e9afadba9d>
 up
-<Buffer 59 e9 af ad a1 ac>
+<Buffer59e9afada1ac>
 dow
-<Buffer 59 e9 84 ad bb a9 ac ad ac ad 47 ac 3d ac ad ad ad ad ad af ad ad ad 8b af 3d ac ad ad ad ad ad ae ad ad ad 6f ac ed ac ad ad ad ad ad>
+<Buffer59e984adbba9acadacad47ac3dacadadadadadafadadad8baf3dacadadadadadaeadadad6facedacadadadadad>
 
 
-ket thuc hoi thoai
+ketthuchoithoai
 dow
-<Buffer 59 e9 af ad b9 a5>
+<Buffer59e9afadb9a5>
 dow
-<Buffer 59 e9 af ad a8 a9 59 e9 af ad a2 a7>
+<Buffer59e9afada8a959e9afada2a7>
 
 
 battle
 up
-<Buffer 59 e9 a4 ad a6 af ae 20 93 ad ad ae ad>
+<Buffer59e9a4ada6afae2093adadaead>
 dow
-<Buffer 59 e9 b1 ad a6 57 cb ac a8 af d2 d9 ad ad ad ad ad ad ad ad ae af 2c ac dd ad 2c ac dd ad b6 af>
+<Buffer59e9b1ada657cbaca8afd2d9adadadadadadadadaeaf2cacddad2cacddadb6af>
 dow
-<Buffer 59 e9 ae ad a6 a7 ac 59 e9 b7 ad a6 a8 a8 a9 32 0d ad ad ad ad d2 d9 ad ad af af 37 a9 d0 ac 37 a9 d0 ac c9 ae 59 e9 b7 ad a6 a8 a8 aa 20 93 ad ad ad ... 17 more bytes>
+<Buffer59e9aeada6a7ac59e9b7ada6a8a8a9320dadadadadd2d9adadafaf37a9d0ac37a9d0acc9ae59e9b7ada6a8a8aa2093adadad...17morebytes>
 dow
-<Buffer 59 e9 af ad 99 ac>
+<Buffer59e9afad99ac>
 
 up
-<Buffer 59 e9 a4 ad a6 af ae 11 97 ad ad a6 ad>
+<Buffer59e9a4ada6afae1197adada6ad>
 dow
-<Buffer 59 e9 b1 ad a6 57 cb ac a8 af d2 d9 ad ad ad ad ad ad ad ad ae af 2c ac dd ad 2c ac dd ad b6 af>
+<Buffer59e9b1ada657cbaca8afd2d9adadadadadadadadaeaf2cacddad2cacddadb6af>
 dow
-<Buffer 59 e9 ae ad a6 a7 ac 59 e9 b7 ad a6 a8 a8 aa 11 97 ad ad ad ad ad ad ad ad ad af 84 ad e7 ad 84 ad e7 ad ab ae>
+<Buffer59e9aeada6a7ac59e9b7ada6a8a8aa1197adadadadadadadadadaf84ade7ad84ade7adabae>
 dow
-<Buffer 59 e9 af ad 99 ac>
+<Buffer59e9afad99ac>
 
 battle
- 59 e9 ab ad ac ac
+59e9abadacac
 
 
- ngu loc
-59 e9 a4 ad ab ac ae 8f a5 da ac a1 57
- 59 e9 a9 ad b9 ac ae ad
+nguloc
+59e9a4adabacae8fa5daaca157
+59e9a9adb9acaead
 
-  59 e9 a4 ad ab af ab b9 ab 97 ab a1 72
-
-
-
-  59 e9 a4 ad ab ac ab 07 aa 96 ab a1 41
+59e9a4adabafabb9ab97aba172
 
 
-  nhat item 
-  59 e9 a4 ad ab ac ae b7 ac 6a ac 8c 44
-59 e9 a9 ad ba af af ad
 
-nha do bing-duong lon tu chau
- 59 e9 a4 ad ab ac ab a7 af 6a ac 8c 67
-  59 e9 a9 ad b9 a5 ac ad>
+59e9a4adabacab07aa96aba141
 
- duong lon-thanh
-<Buffer 59 e9 a4 ad ab ac ab 57 af ca af 8c 4c>
+
+nhatitem
+59e9a4adabacaeb7ac6aac8c44
+59e9a9adbaafafad
+
+nhadobing-duonglontuchau
+59e9a4adabacaba7af6aac8c67
+59e9a9adb9a5acad>
+
 up
-<Buffer 59 e9 a9 ad b9 a9 ac ad>
-
-
-thanh-duong lon
-<Buffer 59 e9 a4 ad ab ac ac 93 ad de ad 8c 78>
+<Buffer59e9a4adabacacffad52ad8c45>
+dow
+<Buffer59e9a6adabace6d5adadacffad52ad>
 up
-<Buffer 59 e9 a9 ad b9 a9 ac ad>
+<Buffer59e9a9adb9a9aaad>
+dow
+<Buffer59e9afadb9a5>
+
+
+
+duonglon-thanh
+<Buffer59e9a4adabacab57afcaaf8c4c>
 up
-<Buffer 59 e9 a9 ad b9 a5 ac ad>
+<Buffer59e9a9adb9a9acad>
 
 
-khoi dau game
-<Buffer 59 e9 a4 ad ab ac ab ff a8 1a af a1 43>
+thanh-duonglon
+<Buffer59e9a4adabacac93addead8c78>
 up
-<Buffer 59 e9 a9 ad b9 a5 ac ad>
+<Buffer59e9a9adb9a9acad>
+up
+<Buffer59e9a9adb9a5acad>
 
+
+khoidaugame
+<Buffer59e9a4adabacabffa81aafa143>
+up
+<Buffer59e9a9adb9a5acad>
+
+hoanglong
+
+59e9a4adabafaaf4a823ac8c4d
+
+
+loicong
+59e9a4adabacaa63ac76ac8c5b
+59e9a9adb9a5aead
+
+nguloc
+up
+<Buffer59e9a4adabacafe7a5ceac8c78>
+
+<Buffer59e9a9adb9a5aead>
+
+giaico
+<Buffer59e9a4adabaca883abceab8c4f>
+up
+<Buffer59e9a9adb9a5a9ad>
+
+vudoc
+up
+<Buffer59e9a4adabacabf7aaceab8c5c>
+dow
+<Buffer59e9a6adabace6d5adadabf7aaceab>
+up
+<Buffer59e9a9adb9a5afad>
+
+
+qcuoilan1
+up
+<Buffer59e9a4adabacaaa3aeaeaf8c51>
+dow
+<Buffer59e9a6adabace6d5adadaaa3aeaeaf>
+up
+<Buffer59e9a9adb9a9afad>
+dow
+<Buffer59e9afadb9a5>
+up
+<Buffer59e9a9adb9a5afad>
+
+qcuoilan2
+up
+<Buffer59e9a4adabacaa7bae46ad8c79>
+dow
+<Buffer59e9a6adabace6d5adadaa7bae46ad>
+up
+<Buffer59e9a9adb9a9aead>
+dow
+<Buffer59e9afadb9a5>
+dow
+<Buffer59e9afada8a959e9afada2a7>
+up
+<Buffer59e9a9adb9a5aead>
+
+qcuoilan3
+up
+<Buffer59e9a4adabaca8bfa9beac8c4c>
+dow
+<Buffer59e9a6adabace6d5adada8bfa9beac>
+up
+<Buffer59e9a9adb9aca3ad>
+dow
+<Buffer59e9afadabaf>
